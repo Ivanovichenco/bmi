@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Body Mass Index Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Body Mass Index Calculator</h1>
+        <div class="inpbox">
+            <input type="text" class="heigth" id="heigth" placeholder="Your heigth in meters">
+            <input type="text" class="mass" id="mass" placeholder="Mass in kilograms">
+            <br>
+           
+            <button onclick="Calculate()" class="button">Calculate</button>
+            <br>
+            <h2 id="bmi">Here is result</h2>
+        </div>
+    </div>
+
+</body>
+<script>
+    function Calculate(){
+        let heigth = document.getElementById('heigth').value
+        let mass = document.getElementById('mass').value
+
+        let bmi =  parseFloat(mass/(heigth*heigth));
+        bmi = Math.round((bmi * 100));
+        bmi= bmi/100;
+        document.getElementById('bmi').innerHTML='Your Body Mass Index  is: '+ bmi;
+
+    }
+</script>
+</html>
